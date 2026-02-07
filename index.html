@@ -1,103 +1,192 @@
-<!DOCTYPE html>  <html lang="en">  
-<head>  
-  <meta charset="UTF-8">  
-  <title>Important Question 🚨</title>  
-  <style>  
-    body {  
-      margin: 0;  
-      height: 100vh;  
-      background: radial-gradient(circle, #ff758c, #ff7eb3);  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;  
-      text-align: center;  
-      color: #fff;  
-    }  .box {  
-  background: rgba(255,255,255,0.2);  
-  padding: 40px;  
-  border-radius: 25px;  
-  max-width: 420px;  
-  box-shadow: 0 25px 50px rgba(0,0,0,0.3);  
-}  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
 
-h1 {  
-  font-size: 2.3em;  
-}  
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)),
+        url("bg.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
 
-p {  
-  font-size: 1.1em;  
-}  
+    .box {
+      background: rgba(255,255,255,0.2);
+      padding: 40px;
+      border-radius: 30px;
+      max-width: 420px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+      backdrop-filter: blur(6px);
+      animation: pop 0.6s ease;
+    }
 
-button {  
-  padding: 12px 25px;  
-  border: none;  
-  border-radius: 30px;  
-  font-size: 1em;  
-  cursor: pointer;  
-  margin: 10px;  
-  transition: 0.3s;  
-}  
+    @keyframes pop {
+      from { transform: scale(0.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
 
-.yes {  
-  background: #ff1744;  
-  color: white;  
-}  
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
 
-.yes:hover {  
-  transform: scale(1.1);  
-}  
+    h2 {
+      margin-top: 15px;
+    }
 
-.no {  
-  background: white;  
-  color: #ff1744;  
-  position: absolute;  
-}  
+    p {
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
 
-.heart {  
-  font-size: 3em;  
-  animation: float 1.2s infinite;  
-}  
+    button {
+      padding: 14px 30px;
+      border: none;
+      border-radius: 40px;
+      font-size: 1.1em;
+      cursor: pointer;
+      margin: 12px;
+      transition: all 0.3s ease;
+    }
 
-@keyframes float {  
-  0% { transform: translateY(0); }  
-  50% { transform: translateY(-10px); }  
-  100% { transform: translateY(0); }  
-}
+    .yes {
+      background: linear-gradient(45deg, #ff1744, #ff5f6d);
+      color: white;
+      box-shadow: 0 0 18px rgba(255,23,68,0.8);
+      animation: glow 1.5s infinite;
+    }
 
-  </style>  
-</head>  
-<body>    <div class="box" id="content">  
-    <div class="heart">💘</div>  
-    <h1>⚠️ Serious Question ⚠️</h1>  
-    <p>  
-      I’ve been thinking…<br>  
-      Overthinking…<br>  
-      Dramatically staring at the ceiling…<br><br>  
-      And I must ask you this:  
-    </p>  <h2>Will you be my Valentine? 🥹❤️</h2>  
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #ff1744; }
+      50% { box-shadow: 0 0 28px #ff5f6d; }
+      100% { box-shadow: 0 0 10px #ff1744; }
+    }
 
-<button class="yes" onclick="yesClicked()">YES OMG 😍</button>  
-<button class="no" onmouseover="moveNo()">No 😐</button>
+    .yes:hover {
+      transform: scale(1.15);
+    }
 
-  </div>    <script>  
-    function yesClicked() {  
-      document.getElementById("content").innerHTML = `  
-        <div class="heart">🎉💖🎉</div>  
-        <h1>SHE SAID YES!!!</h1>  
-        <p>  
-          I officially win Valentine’s Day 😎❤️<br><br>  
-          Thank you for choosing me.<br>  
-          I promise love, laughs, and stealing your snacks forever 🍟🥰  
-        </p>  
-      `;  
-    }  
-  
-    function moveNo() {  
-      const btn = document.querySelector(".no");  
-      const x = Math.random() * 200 - 100;  
-      const y = Math.random() * 200 - 100;  
-      btn.style.transform = `translate(${x}px, ${y}px)`;  
-    }  
-  </script>  </body>  
-  </html>
+    .no {
+      background: white;
+      color: #ff1744;
+      position: absolute;
+    }
+
+    .heart {
+      font-size: 3em;
+      animation: float 1.2s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0); }
+    }
+
+    .floating-heart {
+      position: absolute;
+      font-size: 24px;
+      animation: rise 4s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes rise {
+      from {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/02/23/audio_09c3c8e2b7.mp3" type="audio/mpeg">
+</audio>
+
+<div class="box" id="content">
+  <div class="heart">💘</div>
+  <h1>One Important Question 🥹</h1>
+
+  <p>
+    I’ve been thinking…<br>
+    Overthinking…<br>
+    And smiling every time I think of you 💕<br><br>
+    So I must ask you this:
+  </p>
+
+  <h2>Will you be my Valentine? ❤️</h2>
+
+  <button class="yes" onclick="yesClicked()">YES OMG 😍</button>
+  <button class="no" onmouseover="moveNo()">No 😐</button>
+</div>
+
+<script>
+  function yesClicked() {
+    document.getElementById("bgMusic").play();
+
+    document.getElementById("content").innerHTML = `
+      <div class="heart">💖💖💖</div>
+      <h1>She said YES 🥹❤️</h1>
+
+      <p style="margin-top:20px;">
+        I don’t know how many days I will be with you,<br>
+        but I promise this —<br><br>
+
+        every day you are with me will be special,<br>
+        full of love, care, and support. 💞<br><br>
+
+        I will always help you achieve your dreams ✨<br>
+        and stand beside you no matter what.<br><br>
+
+        <strong>I love you ❤️</strong>
+      </p>
+
+      <button class="yes" onclick="okayClicked()">OKAYYYY 😍💍</button>
+    `;
+
+    createHearts();
+  }
+
+  function okayClicked() {
+    alert("Best decision ever 💖🥰");
+  }
+
+  function moveNo() {
+    const btn = document.querySelector(".no");
+    const x = Math.random() * 260 - 130;
+    const y = Math.random() * 260 - 130;
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  function createHearts() {
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "floating-heart";
+      heart.innerText = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 5000);
+    }, 300);
+  }
+</script>
+
+</body>
+</html>      
